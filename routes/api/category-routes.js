@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
     });
     console.log(categoryData);
 
-    const categories = categoryData.map((product) => product.get({ plain: true}));
+    const categories = categoryData.map((category) => category.get({ plain: true}));
 
     res.status(200).json(categoryData);
   } catch (err) {
