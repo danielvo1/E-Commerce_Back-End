@@ -22,7 +22,7 @@ router.get('/', async (req, res) => {
     const products = productData.map((product) => product.get({ plain: true}));
     console.log("products", products);
 
-    res.status(200).json(locationData);
+    res.status(200).json(productData);
   } catch (err) {
     res.status(500).json(err);
   }
@@ -48,7 +48,7 @@ router.get('/:id', async (req, res) => {
       res.status(404).json({ message: 'No Product found with this id!' });
       return;
     }
-    res.status(200).json(travellerData);
+    res.status(200).json(productData);
   } catch(err) {
     res.status(500).json(err);
   }
